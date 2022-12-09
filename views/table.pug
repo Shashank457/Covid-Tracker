@@ -1,0 +1,252 @@
+extends base 
+block content 
+    .main 
+        .covid
+            .container.my-4
+                .pandemic
+                    <button class="w-100 btn btn-lg btn-secondary ">COVID-19 CORONAVIRUS PANDEMIC <i class="fa fa-snowflake-o" aria-hidden="true"></i></button>
+                .test(style="margin-left:300px;")
+                    //- button.w-100.btn.btn-sm.btn-light(type='button' ) Last updated:
+                    h8(style="margin-left:110px; margin-top:-15px; font-weight:bold;")= new Date(data.updated)
+                .btn-group(role='group' aria-label='Basic outlined example' style="margin-left:870px;")
+                    <button class="btn btn-outline-warning active" type='button'><a  href="#abc">weekly trends</a></button>
+                    <button class="btn btn-outline-warning" type='button'><a  href="#abc">Cases</a></button>
+                    <button class="btn btn-outline-warning" type='button'><a href="#abcd">Facts</a></button>
+                form.d-flex.searchcountry2
+                    .search-below
+                        input#search2.form-control.me-2(type='search' placeholder='Search country' aria-label='Search')
+                        button.btn.btn-outline-success(type='submit') Search
+                    .chart-map
+                        .chart
+                            <iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="210%" height="480px"></iframe>
+                .maincard
+                    .row.row-cols-1.row-cols-md-4.mb-3.text-center
+                        .col
+                            .card.mb-4.rounded-3.shadow-sm.border-danger.btn-outline-danger
+                                .card-header.py-3
+                                    h4.my-0.fw-normal Confirmed
+                                .card-body
+                                    h4.card-title.pricing-card-title=`${data.cases.toLocaleString()}`
+                                    ul.list-unstyled.mt-3.mb-4
+                                        li Today cases
+                                        li=`+${data.todayCases.toLocaleString()}`
+
+                        .col
+                            .card.mb-4.rounded-3.shadow-sm.border-info.btn-outline-info
+                                .card-header.py-3
+                                    h4.my-0.fw-normal Active
+                                .card-body
+                                    h4.card-title.pricing-card-title=`${data.active.toLocaleString()}`
+
+                                    ul.list-unstyled.mt-3.mb-4
+                                        li Critical Cases
+                                        li=`${data.critical.toLocaleString()}`
+
+
+                        .col
+                            .card.mb-4.rounded-3.shadow-sm.border-success.btn-outline-success
+                                .card-header.py-3
+                                    h4.my-0.fw-normal Recovered
+                                .card-body
+                                    h4.card-title.pricing-card-title=`${data.recovered.toLocaleString()}`
+                                    ul.list-unstyled.mt-3.mb-4
+                                        li Today Recovered
+                                        li=`${data.todayRecovered.toLocaleString()}`
+
+                        .col
+                            .card.mb-4.rounded-3.shadow-sm.border-secondary.btn-outline-secondary
+                                .card-header.py-3
+                                    h4.my-0.fw-normal Deceased
+                                .card-body
+                                    h4.card-title.pricing-card-title=`${data.deaths.toLocaleString()}`
+
+                                    ul.list-unstyled.mt-3.mb-4
+                                        li Today Deaths
+                                        li=`${data.todayDeaths.toLocaleString()}`
+                    //- .icon                    
+                    //-     img.mx-2(src='/image1/button icon2.jpg' width='30' id='image')
+                    <button class="w-100 btn btn-lg btn-danger">Corona worldwide <i class="fas fa-virus"></i></button>
+                    .test
+                        button.w-100.btn.btn-lg.btn-light(type='button') Tests:
+                        h6=`{data.tests.toLocaleString()}`
+            //- .carousel 
+            //-     #carouselExampleIndicators.carousel.slide(data-bs-ride='carousel')
+            //-         .carousel-indicators
+            //-             button.active(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+            //-             button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2')
+            //-             button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3')
+            //-         .carousel-inner
+            //-             .carousel-item.active
+            //-                 img.d-block.w-100(src='/image/slide image1.jpg' alt='...')
+            //-             .carousel-item
+            //-                 img.d-block.w-100(src='/image/slide image2.jpg' alt='...')
+            //-             .carousel-item
+            //-                 img.d-block.w-100(src='/image/slide image3.jpg' alt='...')
+            //-         button.carousel-control-prev(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev')
+            //-             span.carousel-control-prev-icon(aria-hidden='true')
+            //-             span.visually-hidden Previous
+            //-         button.carousel-control-next(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next')
+            //-             span.carousel-control-next-icon(aria-hidden='true')
+            //-             span.visually-hidden Next
+
+
+            .container
+                #map(style='width: 1300px; height: 700px;' )
+
+            .card.card-info
+                .card-body
+                    h5.card-title Reported Cases and Deaths by Country or Territory
+                    p.card-text The coronavirus COVID-19 is affecting <b> 220 countries and territories. The day is reset after midnight GMT+0</b>. The list of countries and their regional classification is based on the United Nations Geoscheme. Sources are provided under "Latest News." Learn more about covidTracker's COVID-19 data
+            .cases-button
+                <button class="btn btn-light btn-outline-primary btn-lg a1 active" type="button" onclick=show2()> Now </button>
+                <button class="btn btn-light btn-outline-primary btn-lg a2" type="button" onclick=show()> Yesterday </button>
+                <button class="btn btn-light btn-outline-primary btn-lg a3" type="button" onclick=show3()> 2 Days Ago </button>
+            form.d-flex.search-table
+                input#search3.form-control.me-2(type='search' placeholder='Search country' aria-label='Search')
+                button#abc.btn.btn-outline-success(type='submit') Search
+            table#visible2.table.table-hover.table-bordered
+                thead.table-warning.tableFixHead
+                    tr
+                        th(scope='col') #
+                        th(scope='col') country,  other
+                        th(scope='col') Total cases
+                        th(scope='col') New cases
+                        th(scope='col') Total Deaths
+                        th(scope='col') New Deaths 
+                        th(scope='col') Total Recovered
+                        th(scope='col') Active Cases
+                        th(scope='col') Serious,  Critical
+                        th(scope='col') Tot Cases/ 1M pop
+                        th(scope='col') Deaths/ 1M pop
+                        th(scope='col') Total Tests
+                        th(scope='col') Tests/ 1M pop
+                        th(scope='col')   Population
+                
+                    tbody    
+                        tr
+                            th(scope='row') 1
+                            td=`${data.country.toLocaleString()}`
+                            td=`${data.cases.toLocaleString()}`
+                            td=`${data.todayCases.toLocaleString()}`
+                            td.table-danger=`${data.deaths.toLocaleString()}`
+                            td=`${data.todayDeaths.toLocaleString()}`
+                            td=`${data.recovered.toLocaleString()}`
+                            td.table-primary=`${data.active.toLocaleString()}`
+                            td=`${data.critical.toLocaleString()}`
+                            td=`${data.casesPerOneMillion.toLocaleString()}`
+                            td=`${data.deathsPerOneMillion.toLocaleString()}`
+                            td=`${data.tests.toLocaleString()}`
+                            td=`${data.testsPerOneMillion.toLocaleString()}`
+                            td=`${data.population.toLocaleString()}`  
+
+            <div class="table8" id="visible1" style="visibility: hidden;">
+                table.table.table-hover.table-bordered
+                    thead.table-warning
+                        tr
+                            th(scope='col') #
+                            th(scope='col') country,  other
+                            th(scope='col') Total cases
+                            th(scope='col') New cases
+                            th(scope='col') Total Deaths
+                            th(scope='col') New Deaths 
+                            th(scope='col') Total Recovered
+                            th(scope='col') Active Cases
+                            th(scope='col') Serious,  Critical
+                            th(scope='col') Tot Cases/ 1M pop
+                            th(scope='col') Deaths/ 1M pop
+                            th(scope='col') Total Tests
+                            th(scope='col') Tests/ 1M pop
+                            th(scope='col')   Population
+                   
+                        tbody
+                            tr
+                                th(scope='row') 1
+                                td=`${data3.country.toLocaleString()}`
+                                td=`${data3.cases.toLocaleString()}`
+                                td=`${data3.todayCases.toLocaleString()}`
+                                td.table-danger=`${data3.deaths.toLocaleString()}`
+                                td=`${data3.todayDeaths.toLocaleString()}`
+                                td=`${data3.recovered.toLocaleString()}`
+                                td.table-primary=`${data3.active.toLocaleString()}`
+                                td=`${data3.critical.toLocaleString()}`
+                                td=`${data3.casesPerOneMillion.toLocaleString()}`
+                                td=`${data3.deathsPerOneMillion.toLocaleString()}`
+                                td=`${data3.tests.toLocaleString()}`
+                                td=`${data3.testsPerOneMillion.toLocaleString()}`
+                                td=`${data3.population.toLocaleString()}`
+            </div>
+            table#visible3.table9.table.table-hover.table-bordered(style='visibility:hidden;')
+                thead.table-warning
+                    tr
+                        th(scope='col') #
+                        th(scope='col') country,  other
+                        th(scope='col') Total cases
+                        th(scope='col') New cases
+                        th(scope='col') Total Deaths
+                        th(scope='col') New Deaths 
+                        th(scope='col') Total Recovered
+                        th(scope='col') Active Cases
+                        th(scope='col') Serious,  Critical
+                        th(scope='col') Tot Cases/ 1M pop
+                        th(scope='col') Deaths/ 1M pop
+                        th(scope='col') Total Tests
+                        th(scope='col') Tests/ 1M pop
+                        th(scope='col')   Population
+                
+                    tbody
+                        tr
+                            th(scope='row') 1
+                            td=`${data4.country.toLocaleString()}`
+                            td=`${data4.cases.toLocaleString()}`
+                            td=`${data4.todayCases.toLocaleString()}`
+                            td.table-danger=`${data4.deaths.toLocaleString()}`
+                            td=`${data4.todayDeaths.toLocaleString()}`
+                            td=`${data4.recovered.toLocaleString()}`
+                            td.table-primary=`${data4.active.toLocaleString()}`
+                            td=`${data4.critical.toLocaleString()}`
+                            td=`${data4.casesPerOneMillion.toLocaleString()}`
+                            td=`${data4.deathsPerOneMillion.toLocaleString()}`
+                            td=`${data4.tests.toLocaleString()}`
+                            td=`${data4.testsPerOneMillion.toLocaleString()}`
+                            td=`${data4.population.toLocaleString()}`
+
+
+            .update-container#abcd
+                h1(style="font-style: normal;") Corona Updates: 
+                <img src='/image/corona update.png' alt=""  style ="margin-left:25px;"  />
+                    each y in data2
+                        -if(y.todayCases!=0 && y.todayDeaths!=0)
+                            .card-update
+                                a(href=`/country/${y.country}`)
+                                    h6=`• ${y.todayCases} new cases and ${y.todayDeaths} new deaths in  ${y.country}`
+
+    //- footer.footer.footertable.mt-auto.py-3.bg-dark
+    //-     .container
+    //-         .onepartone 
+    //-             a(href="/") covidTracker 
+    //-             .track
+    //-                 img.mx-2(src='/image1/corona icon.png' width='30')
+
+    //-             h6 We stand with everyone fighting on the frontlines
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

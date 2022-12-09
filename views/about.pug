@@ -1,0 +1,32 @@
+extends base
+block content 
+    .container.my-4 
+        .pandemic
+            <button class="w-100 btn btn-lg btn-secondary " href="/">COVID-19 INFECTED  COUNTRIES <i class="fa fa-snowflake-o" aria-hidden="true"></i></button>
+        .test(style="margin-left:300px;")
+            h8(style="margin-left:130px; margin-top:-15px; font-weight:bold;")=Date(data.updated)
+        .contentone
+            .one 
+                span • What are your sources? How is the data gathered for this<br>project?
+                p We are using state bulletins and official handles to update<br>our numbers. The data is validated by a npm package <br>called NOVELCOVID. We would love it if  you can use this <br> data in the fight against this virus.The source list is here.
+            .two 
+                span • Why does NOVELCOVID have difference in numbers<br> compared to MOHFW website?
+                p MoHFW updates the data at a scheduled time. However, we<br> update them based on state press bulletins, official (CM,Health M) <br>handles, PBI, Press Trust of India, ANI reports. These are <br>generally more recent.
+            .three 
+                span • Where can I find the data for this?
+                p All the data is available through an package for further analysis and <br>development here :<a href="https://www.npmjs.com/package/novelcovid" style="color: #0066b2;">https://www.npmjs.com/package/novelcovid</a>
+            .four
+                span • Who are you?
+                p We are a group of dedicated volunteers who curate and verify<br> the data coming from several sources. We extract the details, like<br> a patient's relationship with other patients to identify local and <br>community transmissions, travel history and status. We never collect <br>or expose any personally identifiable data regarding the patients.
+            .five 
+                span • Why are you guys putting in time and resources to do this while not gaining a single penny from it?
+                p Because it affects all of us. Today it's someone else who is getting <br>infected; tomorrow it could be us. We need to prevent the spread of <br>this virus. We need to document the data so that people with knowledge<br> can use this data to make informed decisions. 
+    footer.footer.mt-auto.py-3.bg-dark
+        .container
+            .onepartone 
+                a(href="/") covidTracker 
+                .track
+                    img.mx-2(src='/image1/corona icon.png' width='30')
+
+                h6 We stand with everyone fighting on the frontlines
+    

@@ -1,0 +1,352 @@
+.main {
+  background-color: #fefcff;
+}
+
+.maincard {
+  width: 750px;
+  margin-top: 70px;
+  cursor: pointer;
+}
+.form-control {
+  width: 300px;
+}
+.indiacases {
+  margin-left: 70%;
+  margin-top: -30%;
+}
+.chart {
+  border: none;
+  margin-top: -250%;
+  margin-left: 40%;
+
+  height: fit-content;
+}
+.btn-outline-info {
+  color: #0dcaf0;
+}
+.btn-outline-success {
+  color: #198754;
+}
+.btn-outline-danger {
+  color: #dc3545;
+}
+.btn-outline-secondary {
+  color: #adb5bd;
+}
+.btn-outline-warning {
+  color: black;
+}
+.test {
+  width: 50%;
+  margin-top: 10px;
+  margin-left: 160px;
+}
+.test h6 {
+  margin-top: -32px;
+  margin-left: 215px;
+}
+.icon {
+  margin-left: 60%;
+}
+.card-container {
+  margin: 0 auto;
+  display: ruby-base-container;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(3, 1fr); */
+  grid-gap: 3rem;
+  margin-top: 3%;
+}
+.card-container2 {
+  margin-top: 7%;
+}
+.table {
+  margin-top: 10%;
+}
+.card-info {
+  width: 700px;
+  margin-left: 7%;
+  margin-top: 3%;
+  border: none;
+  background-color: #f2f2f2;
+}
+.cases-button {
+  margin-top: 5%;
+  margin-left: 1%;
+}
+.table {
+  margin-top: 1%;
+}
+.a2 {
+  margin-left: 2%;
+}
+.a3 {
+  margin-left: 2%;
+}
+.table2 {
+  /* margin-top: -609.3%; */
+  /* margin-top: -610.76%;
+  margin-left: -0.5px; */
+  margin-top: -610.8%;
+}
+.table3 {
+  margin-top: -610.9%;
+}
+.table4 {
+  margin-top: -7.5%;
+}
+/* .tableFixHead thead th {
+  position: sticky;
+  top: 0;
+} */
+.pandemic {
+  margin-top: 8%;
+}
+.search-table {
+  margin-left: 50%;
+  margin-top: -3%;
+}
+.images {
+  width: 130px;
+  margin-top: 5%;
+  height: 50;
+  margin-left: 10%;
+}
+.images h2 {
+  margin-top: -55%;
+  margin-left: 120%;
+}
+.corona-active {
+  margin-top: 6%;
+  margin-left: 7%;
+}
+.corona-active h1 {
+  margin-left: 3.5%;
+  color: #adb8bd;
+}
+
+.corona-deaths {
+  margin-top: 5%;
+  margin-left: 7%;
+}
+.corona-deaths h2 {
+  margin-left: 4.4%;
+}
+.corona-deaths h1 {
+  margin-left: 3.6%;
+  color: #000;
+}
+.corona-recovered {
+  margin-top: 5%;
+  margin-left: 7%;
+}
+.corona-recovered h2 {
+  margin-left: 3.6%;
+}
+.corona-recovered h1 {
+  margin-left: 3.1%;
+  color: green;
+}
+.corona-card {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+.card2 {
+  width: 80%;
+  height: 120%;
+}
+.p1 {
+  color: red;
+}
+.card-body h5 {
+  margin-left: 15%;
+}
+.country-table3 {
+  margin-top: -722%;
+}
+.country-table2 {
+  margin-top: -722%;
+}
+.news-container {
+  margin-top: 5%;
+}
+.news-container h1 {
+  margin-left: 2%;
+}
+.news-button {
+  margin-top: 2%;
+}
+.btn-group button {
+  margin-left: 2%;
+}
+.card-news {
+  margin-top: 2%;
+  margin-left: 1%;
+}
+.card-image {
+  margin-top: -240%;
+  margin-left: 70%;
+}
+.update-container {
+  margin-top: 3%;
+}
+.update-container h1 {
+  margin-left: 2%;
+  color: darkgoldenrod;
+}
+.card-update {
+  margin-top: 2%;
+  margin-left: 1%;
+}
+.card-update h6 {
+  font-weight: bold;
+  font-style: italic;
+}
+.card-update a {
+  color: #000;
+  text-decoration-line: none;
+}
+.country-map {
+  margin-top: -670%;
+  margin-left: 45%;
+}
+.search-below {
+  margin-top: 3%;
+}
+.search-below button {
+  margin-left: 110%;
+  margin-top: -22%;
+}
+.carousel {
+  width: 60%;
+  margin-top: -35%;
+  margin-left: 30%;
+}
+.chart-map {
+  /* position: fixed; */
+  border: none;
+  margin-top: 60%;
+  margin-left: 35%;
+
+  height: fit-content;
+}
+.maincard {
+  margin-top: -50%;
+}
+.table5 {
+  margin-top: -610.8%;
+  /* margin-left: -0.4%; */
+}
+.table6 {
+  margin-top: -610.8%;
+  /* margin-left: -0.4%; */
+}
+.contentone {
+  margin-top: 3%;
+  margin-left: 32%;
+}
+.one p {
+  color: #0066b2;
+  font-size: 115%;
+  font-weight: bold;
+}
+.one span {
+  font-weight: bold;
+  color: black;
+  font-size: 115%;
+}
+.two p {
+  color: #0066b2;
+  font-size: 115%;
+  font-weight: bold;
+}
+.two span {
+  font-weight: bold;
+  color: black;
+  font-size: 115%;
+}
+.three p {
+  color: #0066b2;
+  font-size: 115%;
+  font-weight: bold;
+}
+.three span {
+  font-weight: bold;
+  color: black;
+  font-size: 115%;
+}
+.four p {
+  color: #0066b2;
+  font-size: 115%;
+  font-weight: bold;
+}
+.four span {
+  font-weight: bold;
+  color: black;
+  font-size: 115%;
+}
+
+.five p {
+  color: #0066b2;
+  font-size: 115%;
+  font-weight: bold;
+}
+.five span {
+  font-weight: bold;
+  color: black;
+  font-size: 115%;
+}
+.contenttwo {
+  margin-left: 32%;
+  margin-top: 3%;
+}
+.onepartone {
+  margin-left: 25%;
+}
+.track {
+  margin-left: 19%;
+  margin-top: -3%;
+}
+.onepartone a {
+  font-weight: bold;
+  color: white;
+  font-size: 115%;
+  margin-left: 24%;
+  text-decoration-line: none;
+}
+.onepartone h6 {
+  color: white;
+  margin-top: 1%;
+  margin-left: 11%;
+  font-size: 105%;
+  font-style: italic;
+}
+
+.btn-group {
+  margin-top: 2%;
+
+  height: 5%;
+  width: 30%;
+}
+.btn-group a {
+  font-weight: bold;
+  color: black;
+  text-decoration-line: none;
+}
+.table8 {
+  margin-top: -8.1%;
+}
+.table9 {
+  margin-top: -8.1%;
+}
+.footer {
+  margin-top: 40%;
+}
+.container-cases {
+  border-color: white;
+  width: 6.5%;
+  height: auto;
+  margin-left: -7%;
+  margin-top: 21%;
+  border: 1px solid white;
+  box-shadow: 0px 0px 16px teal;
+}

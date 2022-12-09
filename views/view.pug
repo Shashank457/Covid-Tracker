@@ -1,0 +1,37 @@
+extends base 
+block content 
+    
+    .container.my-4
+        .card-container2
+            .pandemic
+                <button class="w-100 btn btn-lg btn-secondary " href="/">COVID-19 INFECTED  COUNTRIES <i class="fa fa-snowflake-o" aria-hidden="true"></i></button>
+            .test(style="margin-left:300px;")
+               
+                h8(style="margin-left:130px; margin-top:-15px; font-weight:bold;")=Date(data.updated)
+            .row.row-cols-1.row-cols-md-4.mb-3.text-center
+                each x in data
+                    .card-container
+                        .card(style='width: 18rem;')
+                            img.card-img-top(src=`${x.countryInfo.flag}` alt=`${x.flag}`)
+                            .card-body
+                                a(href=`/country/${x.country}`)
+                                    h5.card-title(style="margin-left:10px;")=x.country
+                                p.card-text=`Total cases:${x.cases.toLocaleString()}` 
+                                
+                            ul.list-group.list-group-flush
+                                li.list-group-item.btn-outline-info=`Active:${x.active.toLocaleString()}`
+                                li.list-group-item.btn-outline-success=`Recovered:${x.recovered.toLocaleString()}`
+                                li.list-group-item.btn-outline-danger=`Deceased:${x.deaths.toLocaleString()}`
+                                li.list-group-item.btn-outline-secondary=`Critical:${x.critical.toLocaleString()}`
+                            .card-body
+                                p.btn-outline-warning=`Today Cases:${x.todayCases.toLocaleString()}|Today recovered:${x.todayRecovered.toLocaleString()}`
+                                h12=`Last updated:${Date.parse(x.updated)}`
+            
+    footer.footer.mt-auto.py-3.bg-dark
+        .container
+            .onepartone 
+                a(href="/") covidTracker 
+                .track
+                    img.mx-2(src='/image1/corona icon.png' width='30')
+
+                h6 We stand with everyone fighting on the frontlines

@@ -1,0 +1,36 @@
+extends base
+block content 
+    .container
+        .pandemic
+            <button class="w-100 btn btn-lg btn-secondary " href="/">COVID-19 INFECTED  COUNTRIES <i class="fa fa-snowflake-o" aria-hidden="true"></i></button>
+        .test(style="margin-left:300px;")
+            h8(style="margin-left:130px; margin-top:-15px; font-weight:bold;")=Date(data.updated)
+        .news-container
+            h1 Latest News:
+            img.rounded.img-thumbnail(src='/image/news.jpg' style='height:100px; width:100px; margin-left:280px;margin-top:-70px')
+            .news-button
+                .btn-group(role='group' aria-label='Basic example')
+                    a.btn.btn-warning.active(href="/news/WORLD") World
+                    a.btn.btn5.btn-warning(href="/news/NATION") Nation
+                    a.btn.btn5.btn-warning(href="/news/BUSINESS") Business
+                    a.btn.btn5.btn-warning(href="/news/TECHNOLOGY") Technology
+                    a.btn.btn5.btn-warning(href="/news/SCIENCE") Science
+                    a.btn.btn5.btn-warning(href="/news/ENTERTAINMENT") Entertainment
+                    a.btn.btn5.btn-warning(href="/news/SPORTS") Sports
+                    a.btn.btn5.btn-warning(href="/news/HEALTH") Health
+            each x,i in b.items
+                .card-news
+                  <dd>
+                    h6=`${i+1}. ${x.title}.`
+                  </dd>
+            .card-image 
+                img.rounded.img-thumbnail(src=`https://source.unsplash.com/400x400/?${b.category}`)
+        //- .footertable
+        //-     footer.footer.footertable.mt-auto.py-3.bg-dark
+        //-         .container
+        //-             .onepartone 
+        //-                 a(href="/") covidTracker 
+        //-                 .track
+        //-                     img.mx-2(src='/image1/corona icon.png' width='30')
+
+        //-                 h6 We stand with everyone fighting on the frontlines

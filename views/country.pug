@@ -1,0 +1,151 @@
+extends base 
+block content 
+    .container.my-4
+        .country-cases 
+            .pandemic
+                <button class="w-100 btn btn-lg btn-secondary ">COVID-19 CORONAVIRUS PANDEMIC  <i class="fa fa-snowflake-o" aria-hidden="true"></i></button>
+            .test(style="margin-left:300px;")
+                h8(style="margin-left:110px; margin-top:-15px; font-weight:bold;")=Date(data.updated)
+            .images 
+                img.img-thumbnail(src=`${data.countryInfo.flag}` alt="...")
+                h2=data.country
+            .corona-active 
+                h2 Coronavirus Cases:
+                h1.card-text=`${data.cases.toLocaleString()}`
+            .corona-deaths 
+                h2 Deaths: 
+                h1.card-text=`${data.deaths.toLocaleString()}`
+            .corona-recovered 
+                h2 Recovered:
+                h1.card-text=`${data.recovered.toLocaleString()}`
+            .corona-card 
+                .card.card2.text-dark.bg-light.mb-3.btn-outline-danger(style='max-width: 18rem;')
+                    .card-header.bg-warning Cases
+                    .card-body
+                        h5.card-title=`Active:${data.active.toLocaleString()}`
+                        p.p1.card-text=`Today Cases:  ${data.todayCases.toLocaleString()}`
+                        p.p1.card-text=`Today recovered:  ${data.todayRecovered.toLocaleString()}`
+        .cases-button
+            <button class="btn btn-light btn-outline-primary btn-lg a1 active" type="button" onclick=show2()> Now </button>
+            <button class="btn btn-light btn-outline-primary btn-lg a2" type="button" onclick=show()> Yesterday </button>
+            <button class="btn btn-light btn-outline-primary btn-lg a3" type="button" onclick=show3()> 2 Days Ago </button>
+        form.d-flex.search-table
+            input#search3.form-control.me-2(type='search' placeholder='Search country' aria-label='Search')
+            button.btn.btn-outline-success(type='submit') Search
+    table#visible2.table.table-hover.table-bordered
+            thead.table-warning.tableFixHead
+                tr
+                    th(scope='col') #
+                    th(scope='col') country,  other
+                    th(scope='col') Total cases
+                    th(scope='col') New cases
+                    th(scope='col') Total Deaths
+                    th(scope='col') New Deaths 
+                    th(scope='col') Total Recovered
+                    th(scope='col') Active Cases
+                    th(scope='col') Serious,  Critical
+                    th(scope='col') Tot Cases/ 1M pop
+                    th(scope='col') Deaths/ 1M pop
+                    th(scope='col') Total Tests
+                    th(scope='col') Tests/ 1M pop
+                    th(scope='col')   Population
+            each x,i in data2
+                tbody    
+                    tr
+                        th(scope='row' href=`/country/${x.country}`)=i+1
+                        td=x.country
+                        td=`${x.cases.toLocaleString()}`
+                        td=`${x.todayCases.toLocaleString()}`
+                        td.table-danger=`${x.deaths.toLocaleString()}`
+                        td=`${x.todayDeaths.toLocaleString()}`
+                        td=`${x.recovered.toLocaleString()}`
+                        td.table-primary=`${x.active.toLocaleString()}`
+                        td=`${x.critical.toLocaleString()}`
+                        td=`${x.casesPerOneMillion.toLocaleString()}`
+                        td=`${x.deathsPerOneMillion.toLocaleString()}` 
+                        td=`${x.tests.toLocaleString()}`
+                        td=`${x.testsPerOneMillion.toLocaleString()}`
+                        td=`${x.population.toLocaleString()}`
+
+    <div class="table5" id="visible1" style="visibility: hidden;">
+        table.table.table-hover.table-bordered
+                thead.table-warning
+                    tr
+                        th(scope='col') #
+                        th(scope='col') country,  other
+                        th(scope='col') Total cases
+                        th(scope='col') New cases
+                        th(scope='col') Total Deaths
+                        th(scope='col') New Deaths 
+                        th(scope='col') Total Recovered
+                        th(scope='col') Active Cases
+                        th(scope='col') Serious,  Critical
+                        th(scope='col') Tot Cases/ 1M pop
+                        th(scope='col') Deaths/ 1M pop
+                        th(scope='col') Total Tests
+                        th(scope='col') Tests/ 1M pop
+                        th(scope='col')   Population
+                each x,i in data3
+                    tbody
+                        tr
+                        th(scope='row' href=`/country/${x.country}`)=i+1
+                        td=x.country
+                        td=`${x.cases.toLocaleString()}`
+                        td=`${x.todayCases.toLocaleString()}`
+                        td.table-danger=`${x.deaths.toLocaleString()}`
+                        td=`${x.todayDeaths.toLocaleString()}`
+                        td=`${x.recovered.toLocaleString()}`
+                        td.table-primary=`${x.active.toLocaleString()}`
+                        td=`${x.critical.toLocaleString()}`
+                        td=`${x.casesPerOneMillion.toLocaleString()}`
+                        td=`${x.deathsPerOneMillion.toLocaleString()}` 
+                        td=`${x.tests.toLocaleString()}`
+                        td=`${x.testsPerOneMillion.toLocaleString()}`
+                        td=`${x.population.toLocaleString()}`
+    </div>
+    table#visible3.table6.table.table-hover.table-bordered(style='visibility:hidden;')
+            thead.table-warning
+                tr
+                    th(scope='col') #
+                    th(scope='col') country,  other
+                    th(scope='col') Total cases
+                    th(scope='col') New cases
+                    th(scope='col') Total Deaths
+                    th(scope='col') New Deaths 
+                    th(scope='col') Total Recovered
+                    th(scope='col') Active Cases
+                    th(scope='col') Serious,  Critical
+                    th(scope='col') Tot Cases/ 1M pop
+                    th(scope='col') Deaths/ 1M pop
+                    th(scope='col') Total Tests
+                    th(scope='col') Tests/ 1M pop
+                    th(scope='col')   Population
+            each x,i in data4
+                tbody
+                    tr
+                        th(scope='row' href=`/country/${x.country}`)=i+1
+                        td=x.country
+                        td=`${x.cases.toLocaleString()}`
+                        td=`${x.todayCases.toLocaleString()}`
+                        td.table-danger=`${x.deaths.toLocaleString()}`
+                        td=`${x.todayDeaths.toLocaleString()}`
+                        td=`${x.recovered.toLocaleString()}`
+                        td.table-primary=`${x.active.toLocaleString()}`
+                        td=`${x.critical.toLocaleString()}`
+                        td=`${x.casesPerOneMillion.toLocaleString()}`
+                        td=`${x.deathsPerOneMillion.toLocaleString()}` 
+                        td=`${x.tests.toLocaleString()}`
+                        td=`${x.testsPerOneMillion.toLocaleString()}`
+                        td=`${x.population.toLocaleString()}`  
+
+    .country-map
+        #map(style='width: 750px; height: 800px;' data-countryname=`${data.country}`)
+    //- .footertable
+    //-     footer.footer.mt-auto.py-3.bg-dark
+    //-         .container
+    //-             .onepartone 
+    //-                 a(href="/") covidTracker 
+    //-                 .track
+    //-                     img.mx-2(src='/image1/corona icon.png' width='30')
+
+    //-                 h6 We stand with everyone fighting on the frontlines
